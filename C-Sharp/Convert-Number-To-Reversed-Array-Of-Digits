@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+
+namespace Solution
+{
+  class Digitizer
+  {
+    public static long[] Digitize(long n)
+    {
+      // We need to convert the number to a string to be able to easily access each digit, a number doesnt allow us to directly iterate over its digits.
+      string numberAsString = n.ToString();
+      
+      // Now we'll create a list to store the digits in reverse order
+      List<long> reverseDigits = new List<long>();
+      
+      // Loop backwards throguh the string, this is so that we start with the last digit and work towards the first.
+      for (int i = numberAsString.Length - 1; i >= 0; i--)
+        {
+        // Convert the nurrent character (which is a digit) back to a number and add it too the list that we made
+        reverseDigits.Add(numberAsString[i] - '0');  // 'numberAsString[i] - '0'' converts the char to its numeric value.
+      }
+      
+      // Convert the list of digits to an array and return it. The ToArray method is an easy way to do it.
+      return reverseDigits.ToArray();
+    }
+  }
+}
