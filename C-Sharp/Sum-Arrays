@@ -1,0 +1,28 @@
+public class Kata
+{
+// Public means that the method can be accessed outside of the class, static means that the method belongs to the class itself and not instances of the class
+//'double[] array' is the parameter, representing the array of numbers we need to sum.
+
+    public static double SumArray(double[] array) 
+    {
+
+// Here we are checking if the array is empty or null, if its null it means it wasnt initialised. If its empty then the array has no elements
+// If either of these are true then we return 0 as there are no numbers to sum
+        if (array == null || array.Length == 0)
+        {
+            return 0;
+        }
+
+// Here we initialise a variable called 'sum' to store the total sum of array elements, it is set to zero because we havent added any numbers yet.
+        double sum = 0;
+        foreach (double number in array)
+        {
+
+// Add the current number to the sum - 'sum += number' is shorthand for 'sum = sum + number'
+            sum += number;
+        }
+
+// After the loop is done we return the total value. This is the result of adding all the numbers in the array.
+        return sum;
+    }
+}
