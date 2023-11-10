@@ -1,0 +1,14 @@
+using System;
+
+public static class Kata
+{
+  public static string Greet(string name)
+  {
+        // String interpolation allows us to embed expressions (like variables) directly into a string.
+        // The '$' at the start of the string enables interpolation, and the '{name}' is replaced by the value of 'name'.
+        // This creates a personalized greeting message for the given name.
+    string greeting = $"Hello, {name} how are you doing today?";
+    
+    return greeting;
+  }
+}
